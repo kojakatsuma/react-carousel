@@ -9,6 +9,10 @@ function App() {
         <img width={100} height={100} src="/2.jpg" alt="hoge" />
         <img width={100} height={100} src="/3.jpg" alt="hoge" />
         <img width={100} height={100} src="/4.jpg" alt="hoge" />
+        <img width={100} height={100} src="/1.jpg" alt="hoge" />
+        <img width={100} height={100} src="/2.jpg" alt="hoge" />
+        <img width={100} height={100} src="/3.jpg" alt="hoge" />
+        <img width={100} height={100} src="/4.jpg" alt="hoge" />
       </Carousel>
     </div>
   )

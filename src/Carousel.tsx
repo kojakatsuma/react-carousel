@@ -26,7 +26,7 @@ export const Carousel = ({ children }: { children: ReactNode[] }) => {
         height: 100,
         backgroundColor: 'wheat',
         opacity: number === i ? 1 : 0,
-        transition: 'ease-in 0.2s',
+        transition: 'ease-out 0.2s',
       }}
     >
       {child}

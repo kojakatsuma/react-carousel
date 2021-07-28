@@ -1,6 +1,6 @@
 import { Children, ReactNode, useCallback, useState } from 'react'
 
-export const Carousel = ({ children }: { children: ReactNode }) => {
+export const Carousel = ({ children }: { children: ReactNode[] }) => {
   const [number, setNumber] = useState(0)
   const max = Children.count(children) - 1
   const next = useCallback(
@@ -12,8 +12,13 @@ export const Carousel = ({ children }: { children: ReactNode }) => {
     [max],
   )
 
-  const components = Children.map(children, (child, i) => (
+  const toNumber = (number: number) => {
+    setNumber(number)
+  }
+
+  const components = children.map((child, i) => (
     <div
+      key={i}
       style={{
         width: number === i ? 100 : 0,
         margin: 0,
@@ -21,7 +26,7 @@ export const Carousel = ({ children }: { children: ReactNode }) => {
         height: 100,
         backgroundColor: 'wheat',
         opacity: number === i ? 1 : 0,
-        transition: 'ease-in 0.5s',
+        transition: 'ease-in 0.2s',
       }}
     >
       {child}
@@ -36,6 +41,13 @@ export const Carousel = ({ children }: { children: ReactNode }) => {
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <button onClick={prev}>前</button>
         <button onClick={next}>次</button>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        {components?.map((_, i) => (
+          <button key={i} onClick={() => toNumber(i)}>
+            {i + 1}
+          </button>
+        ))}
       </div>
     </>
   )

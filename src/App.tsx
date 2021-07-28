@@ -5,10 +5,10 @@ function App() {
   return (
     <div style={{ margin: 100 }}>
       <Carousel>
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
+        <img width={100} height={100} src="/1.jpg" alt="hoge" />
+        <img width={100} height={100} src="/2.jpg" alt="hoge" />
+        <img width={100} height={100} src="/3.jpg" alt="hoge" />
+        <img width={100} height={100} src="/4.jpg" alt="hoge" />
       </Carousel>
     </div>
   )
